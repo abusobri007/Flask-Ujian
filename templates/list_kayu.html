@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <div class="animateme">
+        <ul class="bg-bubbles">
+            <link rel="stylesheet" href="sytle.css">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+    <div class="container">
+        <div class="row">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>List Pendaftar</title>
+        <link href="{{url_for('static', filename='bootstrap.min.css')}}" rel="stylesheet">
+    
+    
+  </head>
+  <body>
+    <h1>{{lp}}</h1>
+    <p>Tanggal {{tgl}}</p>
+    <table class="table">
+        <thead class="table-dark">
+            <th>id</th>
+            <th>Jenis</th>
+            <th>Ukuran</th>
+            <th>Berat</th>
+            <th>Variabel</th> 
+            <th>Harga</th> 
+            <th></th>
+            
+            
+        </thead>
+          
+          <tbody>
+            {% for l in lp %}
+            <tr>
+              <td>{{loop.index}}</td>
+              <td>{{l.jenis}}</td>
+              <td>{{l.ukuran}}</td>
+              <td>{{l.berat}}</td>
+              <td>{{l.variabel}}</td>
+              <td>{{l.harga}}</td>
+              <td><a href="/list_kayu/{{l.id}}/delete" class="btn btn-danger">delete</a></td>
+              <td><a href="/list_kayu/{{l.id}}/edit"class="btn btn-info">update</a></td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+    
+    <script src="{{url_for('static', filename='bootstrap.min.js')}}" rel="stylesheet"></script>
+  </body>
+</html>
